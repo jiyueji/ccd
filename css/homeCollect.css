@@ -1,0 +1,137 @@
+.homeCollectCenter {
+    height: 13.34rem;
+    background: #e9ebf0;
+    padding: 0 .4rem 0 .28rem;
+}
+
+.homeCollectCenter .collectHeader {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .24rem;
+}
+
+.homeCollectCenter .collectHeader .goBack {
+    width: .2rem;
+    height: .36rem;
+    margin-left: .14rem;
+}
+
+.homeCollectCenter .collectHeader h3 {
+    font-family: PingFangSC-Semibold;
+    font-size: .4rem;
+    color: #020F22;
+}
+
+.homeCollectCenter .collectHeader .more {
+    width: .36rem;
+    height: .08rem;
+}
+
+.homeCollectCenter .collectCenter {}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectDatePic {
+    display: flex;
+    height: .28rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectDatePic .collectPicRadius {
+    background: #FFFFFF;
+    border: .04rem solid #5E5EFF;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    margin-right: .28rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectDatePic .collectPicRadiusNull {
+    background: #EBEBEB;
+    border: .04rem solid #C0C7CD;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    margin-right: .28rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectDatePic .collectDate {
+    font-family: PingFangSC-Regular;
+    font-size: .26rem;
+    color: #C0C7CD;
+    line-height: .28rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain {
+    display: flex;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectPicSolid {
+    width: .08rem;
+    margin-left: .1rem;
+    margin-right: .1rem;
+    background: #AFAFFF;
+}
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectPicSolidNull {
+    background: #E8E8FC;;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody {}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBox:nth-of-type(1) {
+    margin-top: .2rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBox {
+    width: 6.5rem;
+    height: 1.66rem;
+    margin-bottom: .2rem;
+    background: #E8E8FD;
+    border-radius: .24rem;
+    display: flex;
+}
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBox .collectMainBoxFlex {
+    display: flex;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBoxCityData {
+    background: #FBEDF2;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBoxLeader {
+    background: #FFF5D9;
+}
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBoxStop{
+    background: #E0F1FF;
+}
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBox .collectPicImg {
+    width: 1.96rem;
+    height: 1.66rem;
+    margin-right: .18rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBox .collectCenText h3 {
+    font-family: PingFangSC-Medium;
+    font-size: .34rem;
+    color: #9797FF;
+    margin-top: .32rem;
+    margin-bottom: .14rem;
+}
+
+.homeCollectCenter .collectCenter .collectCenterMap .collectMain .collectMainBody .collectMainBox .collectCenText span {
+    font-family: PingFangSC-Medium;
+    font-size: .26rem;
+    color: #B2B2FF;
+}
+.mui-active .mui-inner-wrap{
+    transform: translate3d(-20%, 0px, 0px) !important;
+}
+.mui-off-canvas-right{
+    background: red !important;
+    width: 20% !important;
+    text-align: center;
+    line-height: 1.66rem;
+    font-size: .3rem;
+    font-weight: 500;
+
+}

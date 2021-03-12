@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 引入rem -->
+    <script src="../plug/flexible.js"></script>
+    <link rel="stylesheet" href="../css/homeFooter.css" />
+    <link rel="stylesheet" href="../css/homeTouch.css" />
+    <!-- 引入弹窗 -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../plug/sweetalert/sweetalert.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="homeTouchCenter">
+        <h3>意见反馈</h3>
+        <!-- <div class="touchNews">#iPhone客户端意见反馈<br>版本10.7.0,iPhone11,8,OS13.5.1,网络WIFI</div> -->
+        <textarea placeholder="请填写具体内容" class="touchTextarea"></textarea>
+        <a class="touchHelp">没有速度答复？看看帮助视频吧~</a>
+        <img class="touchFeed" src="../img/feedback.png" />
+        <div class="touchBottom" onclick="alretShow()">提交</div>
+    </div>
+    <!-- 页脚 -->
+    <div class="home-footer">
+        <div class="home-footerShow">
+            <img src="../img/labelDataSmall.png" />
+            <span>数据中心</span>
+        </div>
+        <div class="home-footerShow">
+            <img src="../img/labelCollectSmall.png" />
+            <span>我的收藏</span>
+        </div>
+        <div class="home-footerShow home-footerSelectShow">
+            <img src="../img/labelTouchBig.png" />
+            <span>联系我们</span>
+        </div>
+    </div>
+    <script>
+        function alretShow() {
+            var touchTextarea = document.getElementsByClassName("touchTextarea")
+            var textareaConter = touchTextarea[0].value
+            // console.log(touchTextarea[0].value)
+            if (textareaConter && textareaConter.length > 0) {
+                swal({
+                    title: "提交成功",
+                    // text: "提交成功",
+                    icon: "success",
+                    button: "确定",
+                });
+            }else{
+                swal({
+                    title: "请填写意见反馈具体内容",
+                    // text: "提交成功",
+                    icon: "warning",
+                    button: "确定",
+                });
+            }
+
+            // swal({
+            //     title: "Are you sure?",
+            //     text: "Once deleted, you will not be able to recover this imaginary file!",
+            //     icon: "warning",
+            //     buttons: true,
+            //     dangerMode: true,
+            // })
+            //     .then((willDelete) => {
+            //         if (willDelete) {
+            //             swal("Poof! Your imaginary file has been deleted!", {
+            //                 icon: "success",
+            //             });
+            //         } else {
+            //             swal("Your imaginary file is safe!");
+            //         }
+            //     });
+        }
+    </script>
+</body>
+
+</html>

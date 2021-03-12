@@ -1,0 +1,136 @@
+
+@font-face {
+    font-family: 'PingFangSC-Semibold';
+    src: url('../static/PingFangSC-Semibold.otf');
+}
+
+/* 引入字体图标 */
+@font-face {
+    font-family: 'PingFangSC-Medium';
+    src: url('../static/PingFangSC-Medium.otf');
+}
+
+body,
+h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+}
+
+.homeDataCenter {
+    background: #e9ebf0;
+    height: 13.34rem;
+}
+
+.homeDataCenter .dataNav {
+    height: 1.46rem;
+    /*73px*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .4rem 0 .32rem;
+    /*0 20px 0 16px*/
+}
+
+.homeDataCenter .dataNav h3 {
+    font-family: PingFangSC-Semibold;
+    font-size: .4rem;
+    /*20px*/
+    color: #020F22;
+    line-height: .4rem;
+    /*20px*/
+}
+
+.homeDataCenter .dataNav img {
+    width: .36rem;
+    /*18px*/
+    height: .36rem;
+    /*18px*/
+}
+
+.homeDataCenter .dataContent {
+    padding: 0 .4rem 0 .4rem;
+}
+
+.homeDataCenter .dataContent .dataContentUp {
+    height: 5.74rem;
+    /*287px*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.homeDataCenter .dataContent .dataContentUp .dataCruxData {
+    width: 2.8rem;
+    /*140px*/
+    height: 5.74rem;
+    /*287px*/
+    background-image: linear-gradient(90deg, #9797FF 0%, #AFAFFF 99%, #ACACFF 100%);
+    border-radius: .16rem;
+}
+
+.homeDataCenter .dataContent .dataContentUp .dataCruxData img {
+    width: 1.68rem;
+    height: 1.96rem;
+    margin: .62rem 0 .88rem .4rem;
+}
+
+.homeDataCenter .dataContent .dataCenterText{
+    color: #FFFFFF;
+    font-family: PingFangSC-Medium;
+    font-size: .36rem;
+    margin-left: .4rem;
+    margin-top:.32rem;
+}
+
+.homeDataCenter .dataContent .dataContentUp .dataContentRight {
+    width: 3.7rem;
+    /*185px*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.homeDataCenter .dataContent .dataContentUp .dataContentRight .dataCityData {
+    width: 3.7rem;
+    /*185px*/
+    height: 2.24rem;
+    /*112px*/
+    background-image: linear-gradient(133deg, #F480A9 0%, #F4C2D4 100%);
+    border-radius: .16rem;
+    display:flex;
+}
+.homeDataCenter .dataContent .dataContentUp .dataContentRight .dataCityData img{
+    width:1.34rem;
+    height:1.34rem;
+    margin-top: .46rem;
+    margin-left: .34rem;
+}
+.homeDataCenter .dataContent .dataContentUp .dataContentRight .dataLeader {
+    width: 3.7rem;
+    /*185px*/
+    height: 3.28rem;
+    /*164px*/
+    background-image: linear-gradient(144deg, #F7CA54 13%, #FDE39C 100%);
+    border-radius: .16rem;
+    display:flex;
+}
+.homeDataCenter .dataContent .dataContentUp .dataContentRight .dataLeader img{
+    width: 1.68rem;
+    height: 1.24rem;
+    margin-top:1.08rem;
+    margin-left:.3rem;
+}
+.homeDataCenter .dataContent .dataUnlocking{
+    margin-top:.18rem;
+    background-image: linear-gradient(90deg, #AED9FF 19%, #5AACFF 100%);
+    border-radius: .16rem;
+    width: 6.7rem;
+    height: 3.42rem;
+    overflow: hidden;
+}
+.homeDataCenter .dataContent .dataUnlocking img{
+    width: 3.72rem;
+    height: 2.26rem;
+    margin-left: .44rem;
+    margin-top: .34rem;
+}

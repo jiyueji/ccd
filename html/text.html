@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://da-analytics.intranet.local/javascripts/api/tableau-2.min.js"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="vizContainer" style="width:800px; height:700px;"></div>
+    <script type="text/javascript">
+
+        var userName = 'administrator';//tableAu用户
+        $.ajax({
+            url: host + "/tableau/getTableauTrustedUrl",
+            type: "get",
+            // dataType: "json",
+            // cache: false,
+            success: function (data) {
+                if (data.ticket !== -1) {
+                    //加载tableau页面,data.data为服务器返回trustedUrl，即为http://<tableAu服务器域名>/trusted/<ticket>
+                    initializeViz(data.ticket);
+                } else {
+                    alert("验证失败");
+                }
+            }
+        });
+        //trustedUrl 为http://<tableAu服务器域名>/trusted/<ticket>
+        function initializeViz(trustedUrl) {
+            //view 为tableau视图地址，
+            //若tableau地址为http://tableau.by.com/#/views/KA_0/sheet0?:iid=3，则tableau的视图地址为KA_0/sheet0，
+            var view = '1/1';
+            var containerDiv = document.getElementById("vizContainer");
+            var url = 'http://da-analytics.intranet.local/trusted/' + trustedUrl + '/views/' + view + '?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link';
+            var options = {
+                hideTabs: true,
+                onFirstInteractive: function () {
+                    console.log("Run this code when the viz has finished loading.");
+                }
+            };
+            var viz = new tableau.Viz(containerDiv, url, options);
+        }
+        // function initViz() {
+        //     var containerDiv = document.getElementById("vizContainer"),
+        //         url = "http://da-analytics.intranet.local/t/CityCluster/views/1/1",
+        //         options = {
+        //             hideTabs: true,
+        //             onFirstInteractive: function () {
+        //                 console.log("Run this code when the viz has finished loading.");
+        //             }
+        //         };
+
+        //     var viz = new tableau.Viz(containerDiv, url, options);
+        //     // Create a viz object and embed it in the container div.
+        // }
+        // initViz()
+    </script>
+</body>
+
+</html>

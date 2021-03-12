@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 引入rem -->
+    <!-- <script src="../static/flexible.js"></script> -->
+    <title>Document</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+    <link rel="stylesheet" href=" ../static/dist/css/sm.css">
+    <script src='http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js'></script>
+    <script src=' ../static/dist/js/sm.js'></script>
+    <!--如果你用到了拓展包中的组件，还需要引用下面两个-->
+    <link rel="stylesheet" href=" ../static/dist/css/sm-extend.css">
+    <script src=' ../static/dist/js/sm-extend.js'></script>
+
+    <style>
+        @font-face {
+            font-family: 'PingFangSC-Semibold';
+            src: url('../static/PingFangSC-Semibold.otf');
+        }
+
+        /* 引入字体图标 */
+        @font-face {
+            font-family: 'PingFangSC-Medium';
+            src: url('../static/PingFangSC-Medium.otf');
+        }
+
+        /* 引入字体图标 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .home-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            /*327px */
+            /* padding: 0 .48rem; */
+            /*24px*/
+            height: 3rem;
+            /*60px*/
+            background: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+        }
+
+        .home-footer .home-footerShow {
+            width: 33%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .home-footer .home-footerShow img {
+            width: 1.1rem;
+            /* 21.4px */
+            height: 1.1rem;
+            /* 19px */
+            margin-bottom: .4rem;
+            /*8px*/
+        }
+
+        .home-footer .home-footerShow span {
+            display: block;
+            font-family: PingFangSC-Semibold;
+            font-size: .55rem;
+            /*11px*/
+            color: #A4ABB0;
+            letter-spacing: 0;
+            line-height: .45rem;
+            /*9px*/
+        }
+
+        .home-footer .home-footerSelectShow img {
+            width: 2.2rem;
+            /*44px*/
+            height: 2.2rem;
+            margin-top: -1.2rem;
+            /*-24px*/
+        }
+
+        .home-footer .home-footerSelectShow span {
+            color: #100D67;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="page page-current home-footer" id='home'>
+            <a class="home-footerShow home-footerSelectShow" href="#homeData">
+                <img src="../img/labelDataBig.png" />
+                <span>数据中心</span>
+            </a>
+            <a class="home-footerShow" href="#homeCollect">
+                <img src="../img/labelCollectSmall.png" />
+                <span>我的收藏</span>
+            </a>
+            <a class="home-footerShow" href="#homeTouch">
+                <img src="../img/labelTouchSmall.png" />
+                <span>联系我们</span>
+            </a>
+        </nav>
+        <!-- 这里是页面内容区 -->
+        <div class="page" id="homeData">
+            <div>这里是content</div>
+        </div>
+        <div class="page" id="homeCollect">
+            <div>这里是222</div>
+        </div>
+    </div>
+
+
+    <!-- <div class="page page-current" id='home'>
+        <a href="#home3">内联的新页面</a>
+    </div>
+
+    <div class="page" id='home3'>
+        <div>1111</div>
+    </div> -->
+
+    <script>
+
+    </script>
+</body>
+
+</html>

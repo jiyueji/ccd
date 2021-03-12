@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 引入rem -->
+    <script src="../plug/flexible.js"></script>
+    <link rel="stylesheet" href="../css/homeFooter.css" />
+    <link rel="stylesheet" href="../css/homeCollect.css" />
+    <link rel="stylesheet" href="../plug/mui/css/mui.min.css">
+    <script src="../plug/mui/js/mui.min.js"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="homeCollectCenter">
+        <div class="collectHeader">
+            <img class="goBack" src="../img/goBack.png" />
+            <h3>我的收藏</h3>
+            <div></div>
+            <!-- <img class="more" src="../img/more.png" /> -->
+        </div>
+        <div class="collectCenter" onclick="fn1()">
+            <div class="collectCenterMap">
+                <div class="collectDatePic">
+                    <div class="collectPicRadius"></div>
+                    <span class="collectDate">2020-12-25</span>
+                </div>
+                <div class="collectMain">
+                    <div class="collectPicSolid"></div>
+                    <div class="collectMainBody">
+                        <div class="collectMainBox mui-off-canvas-wrap mui-draggable">
+                            <!-- 菜单容器 -->
+                            <aside class="mui-off-canvas-right">
+                                <!-- <div class="mui-scroll-wrapper"> -->
+                                <!-- 菜单具体展示内容 -->
+                                删除
+                                <!-- </div> -->
+                            </aside>
+                            <div class="mui-inner-wrap">
+                                <div class="collectMainBoxFlex mui-content mui-scroll-wrapper">
+                                    <img src="../img/collectTarget.png" class="collectPicImg" />
+                                    <div class="collectCenText">
+                                        <h3>关键指标</h3>
+                                        <span>A70关键业务指标&财务指标</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collectMainBox mui-off-canvas-wrap mui-draggable">
+                            <!-- 菜单容器 -->
+                            <aside class="mui-off-canvas-right">
+                                <!-- <div class="mui-scroll-wrapper"> -->
+                                <!-- 菜单具体展示内容 -->
+                                删除
+                                <!-- </div> -->
+                            </aside>
+                            <div class="mui-inner-wrap">
+                                <div class="collectMainBoxFlex mui-content mui-scroll-wrapper">
+                                    <img src="../img/collectCityData.png" class="collectPicImg" />
+                                    <div class="collectCenText">
+                                        <h3>城市群数据洞察</h3>
+                                        <span>城市群销售、加入及续约情况&财务指标</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="collectMainBox collectMainBoxCityData">
+                            <img src="../img/collectCityData.png" class="collectPicImg" />
+                            <div class="collectCenText">
+                                <h3>城市群数据洞察</h3>
+                                <span>城市群销售、加入及续约情况</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="collectCenterMap">
+                <div class="collectDatePic">
+                    <div class="collectPicRadius"></div>
+                    <span class="collectDate">2020-12-25</span>
+                </div>
+                <div class="collectMain">
+                    <div class="collectPicSolid"></div>
+                    <div class="collectMainBody">
+                        <div class="collectMainBox collectMainBoxLeader mui-off-canvas-wrap mui-draggable">
+                            <aside class="mui-off-canvas-right">
+                                删除
+                            </aside>
+                            <div class="mui-inner-wrap">
+                                <div class="collectMainBoxFlex mui-content mui-scroll-wrapper">
+                                    <img src="../img/collectLeader.png" class="collectPicImg" />
+                                    <div class="collectCenText">
+                                        <h3>领导人分析</h3>
+                                        <span>营销领导人市场概况、属地销售情况</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collectCenterMap">
+                <div class="collectDatePic">
+                    <div class="collectPicRadius"></div>
+                    <span class="collectDate">2020-12-25</span>
+                </div>
+                <div class="collectMain">
+                    <div class="collectPicSolid collectPicSolidNull"></div>
+                    <div class="collectMainBody">
+                        <div class="collectMainBox collectMainBoxStop mui-off-canvas-wrap mui-draggable">
+                            <aside class="mui-off-canvas-right">
+                                删除
+                            </aside>
+                            <div class="mui-inner-wrap">
+                                <div class="collectMainBoxFlex mui-content mui-scroll-wrapper">
+                                    <img src="../img/collectStop.png" class="collectPicImg" />
+                                    <div class="collectCenText">
+                                        <h3>LGS</h3>
+                                        <span>解锁中，敬请期待</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="collectMainBox collectMainBoxStop">
+                            <img src="../img/collectStop.png" class="collectPicImg" />
+                            <div class="collectCenText">
+                                <h3>LGS</h3>
+                                <span>解锁中，敬请期待</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="collectCenterMap">
+                <div class="collectDatePic">
+                    <div class="collectPicRadiusNull"></div>
+                    <span class="collectDate">无更多数据</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <div class="home-footer">
+        <div class="home-footerShow">
+            <img src="../img/labelDataSmall.png" />
+            <span>数据中心</span>
+        </div>
+        <div class="home-footerShow home-footerSelectShow">
+            <img src="../img/labelCollectBig.png" />
+            <span>我的收藏</span>
+        </div>
+        <div class="home-footerShow">
+            <img src="../img/labelTouchSmall.png" />
+            <span>联系我们</span>
+        </div>
+    </div>
+    <script>
+        var mui = document.querySelectorAll('.mui-off-canvas-wrap')
+        for (var i = 0; i < mui.length; i++) {
+            mui[i].addEventListener('shown', function (event) {
+
+                // console.log(event.target,"111")
+                // var muiFlagShown = event.target
+                // muiFlagShown.parentNode.removeChild(muiFlagShown)
+                // muiFlagShown.style.transform = "translate3d(-20%, 0px, 0px)"
+                // transform: translate3d(-455px, 0px, 0px);
+            })
+            mui[i].addEventListener('hidden', function (event) {
+                // console.log(event.target,"222")
+            })
+            mui[i].addEventListener('tap', function (event) {
+                var muiFlagShown = $(event.target.parentNode.parentNode).children()
+                // console.log(event.target.parentNode.parentNode.parentNode.parentNode.parentNode)
+                if(muiFlagShown.length <= 1){//小于等于1的时候全部删掉
+                    event.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode.parentNode.parentNode)
+                }else{//大于1的时候
+                    event.target.parentNode.parentNode.removeChild(event.target.parentNode)
+                }
+                // muiFlagShown.parentNode.removeChild(muiFlagShown)
+                //阻止默认事件  
+                // event.detail.gesture.preventDefault();
+                // 移除焦点  
+                // document.getElementById("searchtittle").blur();
+            });
+        }
+
+        function fn1() {
+            // console.log("3333")
+            var e = e || window.event;
+            console.log(e)
+        }
+    </script>
+</body>
+
+</html>

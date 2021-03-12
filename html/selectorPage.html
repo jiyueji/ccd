@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 引入rem -->
+    <script src="../plug/flexible.js"></script>
+    <link rel="stylesheet" href=" ../plug/pickerView/pickerView.css">
+    <script src="../plug/pickerView/pickerView.js"></script>
+    <link rel="stylesheet" href="../plug/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../plug/mui/css/mui.picker.min.css">
+    <script src="../plug/mui/js/mui.min.js"></script>
+    <script src="../plug/mui/js/mui.picker.min.js"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+
+
+    <style>
+        @font-face {
+            font-family: 'PingFangSC-Semibold';
+            src: url('../plug/PingFangSC-Semibold.otf');
+        }
+
+        /* 引入字体图标 */
+        @font-face {
+            font-family: 'PingFangSC-Medium';
+            src: url('../plug/PingFangSC-Medium.otf');
+        }
+
+        /* 引入字体图标 */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #eee;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0;
+            font-weight: 100;
+        }
+
+        .selectorHeader {
+            height: .8rem;
+            /*40px*/
+            padding-left: .4rem;
+            /*20px*/
+            display: flex;
+            background: #e9ebf0;
+            align-items: flex-end;
+        }
+
+        .selectorHeader .selectorGoBack {
+            width: .2rem;
+            /*10px*/
+            height: .36rem;
+            /*18px*/
+        }
+
+        .selectorCarousel {
+            height: 3.64rem;
+            /*182px*/
+            text-align: center;
+            background: #e9ebf0;
+        }
+
+        .selectorCarousel .CarouselPic {
+            width: 5.14rem;
+            /*257px*/
+            height: 3.64rem;
+            /*182px*/
+        }
+
+        .selectContent {
+            background: #FDFDFE;
+            border-radius: .4rem .4rem 0 0;
+            /*20px*/
+            overflow: hidden;
+        }
+
+        .selectContent .contentNav {
+            width: 1.16rem;
+            /*58px*/
+            height: .08rem;
+            /*4px*/
+            background: #D8D8D8;
+            border-radius: .4rem;
+            /*20px*/
+            margin: .22rem auto .04rem;
+            /*11px 2px*/
+        }
+
+        .selectContent .contentSearch {
+            font-family: PingFangSC-Medium;
+            font-size: .34rem;
+            /*17px*/
+            color: #3A3A3A;
+            margin-left: .4rem;
+            line-height: .48rem;
+            /*24px*/
+            margin-bottom: .32rem;
+            /*16px*/
+        }
+
+        .selectContent .contentChoose {
+            padding: 0 .6rem 0 .64rem;
+            /*left:32px;right:30px*/
+        }
+
+        .selectContent .contentChoose .contentChoosePer {
+            height: .64rem;
+            /*32px*/
+            display: flex;
+            align-items: center;
+            margin-bottom: .4rem;
+            /*20px*/
+        }
+
+        .selectContent .contentChoose .contentChoosePer .chooseIcon {
+            width: .2rem;
+            /*10px*/
+            height: .32rem;
+            /*16px*/
+            margin-right: .18rem;
+            /*9px*/
+        }
+
+        .selectContent .contentChoose .contentChoosePer .chooseTitle {
+            width: .9rem;
+            /*45px*/
+            font-family: PingFangSC-Regular;
+            font-size: .3rem;
+            /*15px*/
+            color: #3A3A3A;
+            margin-right: .34rem;
+            /*17px*/
+        }
+
+        .selectContent .contentChoose .contentChoosePer .chooseInput {
+            width: 4.02rem;
+            /*201px*/
+            height: .6rem;
+            /*30px*/
+            background: #FFFFFF;
+            border: .02rem solid #100D67;
+            /*1px*/
+            border-radius: .16rem;
+            /*8px*/
+            padding-left: .36rem;
+            /*18px*/
+            /* padding-top: .25rem; */
+            /*5px*/
+            padding-right: .22rem;
+            /*11px*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .selectContent .contentChoose .contentChoosePer .chooseInput .chooseInputText {
+            font-family: PingFangSC-Medium;
+            font-size: .26rem;
+            /*13px*/
+            color: #202020;
+            line-height: .36rem;
+            /*18px*/
+        }
+
+        .selectContent .contentChoose .contentChoosePer .chooseInput .choosePullDown {
+            width: 0;
+            height: 0;
+            border: .16rem solid transparent;
+            /*8px*/
+            border-top-color: #100D67;
+        }
+
+        .amwayButton {
+            width: 6.7rem;
+            /* 335px */
+            height: .76rem;
+            /* 38px */
+            background: #100D67;
+            border-radius: .16rem;
+            /* 8px */
+            margin: 1.24rem auto 1rem;
+            /* 62px 50px */
+            font-family: PingFangSC-Medium;
+            font-size: .34rem;
+            /* 17px */
+            color: #FFFFFF;
+            line-height: .76rem;
+            /* 38px */
+            text-align: center;
+        }
+
+        /* picker ui设置 */
+        .pickerView-item {
+            font-size: .34rem;
+            /* 17px */
+        }
+
+        .pickerView-box-header>div {
+            font-size: .32rem;
+            /* 16px */
+        }
+
+        .pickerView-box-header-btn {
+            width: 1rem;
+            /* 50px */
+        }
+
+        /* mui ui设置 */
+        .mui-poppicker-header .mui-btn {
+            font-size: .32rem;
+            /* 16px */
+        }
+
+        .mui-pciker-list li {
+            font-size: .32rem;
+        }
+
+        .mui-dtpicker-header button {
+            font-size: .32rem;
+        }
+
+        .mui-h5,
+        h5 {
+            font-size: .28rem;
+            /* 14px */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="selectorHeader">
+        <img class="selectorGoBack" src="../img/goBack.png" />
+        <!-- <input type="text" id='picker-name' /> -->
+    </div>
+    <div class="selectorCarousel">
+        <img class="CarouselPic" src="../img/selectorPic.png" />
+    </div>
+    <div class="selectContent">
+        <div class="contentNav"></div>
+        <h3 class="contentSearch">请选择搜索条件</h3>
+        <div class="contentChoose">
+            <div class="contentChoosePer">
+                <img class="chooseIcon" src="../img/selectorIcon.png" />
+                <span class="chooseTitle">报告月</span>
+                <div class="chooseInput" id="btnDate">
+                    <div class="chooseInputText" id="btnDateText">2020年11月</div>
+                    <div class="choosePullDown"></div>
+                </div>
+            </div>
+            <div class="contentChoosePer">
+                <img class="chooseIcon" src="../img/selectorIcon.png" />
+                <span class="chooseTitle">运营区</span>
+                <div class="chooseInput" id="boh">
+                    <div class="chooseInputText" id="bohText">北方区</div>
+                    <div class="choosePullDown"></div>
+                </div>
+            </div>
+            <div class="contentChoosePer">
+                <img class="chooseIcon" src="../img/selectorIcon.png" />
+                <span class="chooseTitle">子区</span>
+                <div class="chooseInput">
+                    <div class="chooseInputText">华北片区</div>
+                    <div class="choosePullDown"></div>
+                </div>
+            </div>
+            <div class="contentChoosePer">
+                <img class="chooseIcon" src="../img/selectorIcon.png" />
+                <span class="chooseTitle">城市群</span>
+                <div class="chooseInput">
+                    <div class="chooseInputText">北京城市群</div>
+                    <div class="choosePullDown"></div>
+                </div>
+            </div>
+            <div class="contentChoosePer">
+                <img class="chooseIcon" src="../img/selectorIcon.png" />
+                <span class="chooseTitle">城市</span>
+                <div class="chooseInput">
+                    <div class="chooseInputText">全部</div>
+                    <div class="choosePullDown"></div>
+                </div>
+            </div>
+        </div>
+        <div class="amwayButton">安利一下</div>
+    </div>
+
+
+    <script>
+        // var data = {
+        //     "小明家": ["小明爸爸", "小明妈妈", "小明爷爷", "小明奶奶", "小明爸爸", "小明妈妈", "小明爷爷", "小明奶奶"],
+        //     "小红家": ["小红爸爸", "小红妈妈"]
+        // }
+        // var btnDate = document.getElementById("btnDate");
+        // btnDate.onclick = function () {
+        //     console.log("1111")
+        //     var pickerView = new PickerView({
+        //         bindElem: btnDate,
+        //         data: data,
+        //         title: '家庭',
+        //         leftText: '取消',
+        //         rightText: '确定',
+        //         rightFn: function (selectArr) {
+        //             console.log(selectArr, 'selectarr');
+        //             // 将家庭成员展示到showText类名的div中
+        //             document.querySelector(".showText").innerText = selectArr.join("-");
+        //         }
+        //     });
+        // }
+
+        $("#btnDate").click(function () {
+            var dtpicker = new mui.DtPicker({
+                type: "month",//设置日历初始视图模式 
+                // beginDate: new Date(2015, 04, 25),//设置开始日期 
+                // endDate: new Date(2016, 04, 25),//设置结束日期 
+                // labels: ['Year', 'Mon', 'Day', 'Hour', 'min'],//设置默认标签区域提示语 
+
+            })
+            dtpicker.show(function (e) {
+                // console.log(e.y.value);
+                document.querySelector("#btnDateText").innerText = e.y.value + "年" + e.m.value + "月"
+            })
+
+        })
+        $("#boh").click(function () {
+            var picker = new mui.PopPicker();
+            picker.setData(["111", "12222", "33333"]);
+            picker.show(function (selectItems) {
+                // console.log(selectItems[0])
+                document.querySelector("#bohText").innerText = selectItems.join("-");
+                // console.log(selectItems[0].text);//智子
+                // console.log(selectItems[0].value);//zz 
+            })
+            // var picker = new mui.PopPicker({
+            //     layer: 2
+            // });
+            // picker.setData([{
+            //     value: '110000',
+            //     text: '北京市',
+            //     children: [{
+            //         value: "110101",
+            //         text: "东城区"
+            //     }]
+            // }, {
+            //     value: '120000',
+            //     text: '天津市',
+            //     children: [{
+            //         value: "120101",
+            //         text: "和平区"
+            //     }, {
+            //         value: "120102",
+            //         text: "河东区"
+            //     }, {
+            //         value: "120104",
+            //         text: "南开区"
+            //     }
+            //     ]
+            // }])
+            // picker.pickers[0].setSelectedIndex(1);
+            // picker.pickers[1].setSelectedIndex(1);
+            // picker.show(function (SelectedItem) {
+            //     console.log(SelectedItem);
+            // })
+        })
+    </script>
+
+</body>
+
+</html>

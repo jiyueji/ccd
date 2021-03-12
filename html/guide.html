@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 引入rem -->
+    <script src="../plug/flexible.js"></script>
+    <title>Document</title>
+    <!-- <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-auth-js/1.8.0/okta-auth-js.min.js"
+        type="text/javascript"></script>
+    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/js/okta-sign-in.min.js" type="text/javas
+cript"></script>
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/css/okta-sign-in.min.css"
+        type="text/css" rel="stylesheet" />
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/css/okta-theme.css" type="text/css"
+        rel="
+stylesheet" /> -->
+    <script src="https://global.oktacdn.com/okta-auth-js/4.2.0/okta-auth-js.min.js" type="text/javascript"></script>
+    <style>
+        @font-face {
+            font-family: 'PingFangSC-Semibold';
+            src: url('../plug/PingFangSC-Semibold.otf');
+        }
+
+        /* 引入字体图标 */
+        @font-face {
+            font-family: 'PingFangSC-Medium';
+            src: url('../plug/PingFangSC-Medium.otf');
+        }
+
+        /* 引入字体图标 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .guide-home {
+            height: 11.94rem;
+            /* 597 */
+            padding-top: 1.4rem;
+            /* 70 */
+        }
+
+        .guide-title {
+            font-family: PingFangSC-Semibold;
+            color: #100D67;
+            font-size: .5rem;
+            /* 25px */
+            line-height: .4rem;
+            /* 20px */
+            text-align: center;
+        }
+
+        .guide-titleSmall {
+            font-family: PingFangSC-Medium;
+            font-size: .34rem;
+            /* 17px */
+            color: #100D67;
+            line-height: .36rem;
+            /* 18px */
+            text-align: center;
+            margin-top: .84rem;
+            /* 42px */
+            margin-bottom: .38rem;
+            /* 19px */
+        }
+
+        .guide-guideImg {
+            width: 6.44rem;
+            /* 322px */
+            height: 6.96rem;
+            /* 348px */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .guide-guideButton {
+            width: 6.7rem;
+            /* 335px */
+            height: .76rem;
+            /* 38px */
+            background: #100D67;
+            border-radius: .16rem;
+            /* 8px */
+            margin: 1.24rem auto 1rem;
+            /* 62px 50px */
+            font-family: PingFangSC-Medium;
+            font-size: .34rem;
+            /* 17px */
+            color: #FFFFFF;
+            line-height: .76rem;
+            /* 38px */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide-home">
+        <div class="guide-title">大数据智能分析看板</div>
+        <div class="guide-titleSmall">安利一下，美好发生</div>
+        <img class="guide-guideImg" src="../img/guideHome.png" />
+        <div class="guide-guideButton">开启美好生活</div>
+        <!-- <a href="https://dev-5735355.okta.com">@oktadev</a> -->
+        <!-- <div class="guide-guideButton" onclick="goHome()">开启美好生活</div> -->
+    </div>
+    <script>
+        // function goHome(){
+        //     window.location.href="./home.html";
+        // }
+        var okta = new OktaAuth({
+            issuer: "https://dev-5735355.okta.com",
+            clientId: "0oa1matn1QXLPKAaI5d6",
+            redirectUri: 'http://localhost:3000/implicit/callback',
+            responseType: ['token', 'id_token'],//['token', 'id_token'],'code'
+            prompt: 'none',
+            scopes: ['openid', 'profile', 'email'],//['openid', 'profile', 'email']是OpenID Connect中的保留范围，可让您访问用户的数据。
+            pkce: true,
+        });
+
+        // Handle the user's login and what happens next.
+        async function handleLogin() {
+            // console.log(okta)
+            if (okta.isLoginRedirect()) {
+                await okta.handleLoginRedirect();
+            } else if (!await okta.isAuthenticated()) {
+                console.log("111")
+                // Start the browser based oidc flow, then parse tokens from the redirect callback url
+                okta.signInWithRedirect();
+            } else {
+                // User is authenticated
+            }
+        }
+        
+
+        handleLogin();
+    </script>
+</body>
+
+</html>

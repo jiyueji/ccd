@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 引入rem -->
+    <script src="../static/flexible.js"></script>
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'PingFangSC-Semibold';
+            src: url('../static/PingFangSC-Semibold.otf');
+        }
+
+        /* 引入字体图标 */
+        @font-face {
+            font-family: 'PingFangSC-Medium';
+            src: url('../static/PingFangSC-Medium.otf');
+        }
+
+        /* 引入字体图标 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .home-footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            /*327px */
+            /* padding: 0 .48rem; */
+            /*24px*/
+            height: 1.2rem;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+        }
+
+        .home-footer .home-footerShow {
+            width: 33%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .home-footer .home-footerShow img {
+            width: .428rem;
+            /* 21.4px */
+            height: .38rem;
+            /* 19px */
+            margin-bottom: .16rem;
+            /*8px*/
+        }
+
+        .home-footer .home-footerShow span {
+            display: block;
+            font-family: PingFangSC-Semibold;
+            font-size: .22rem;
+            /*11px*/
+            color: #A4ABB0;
+            letter-spacing: 0;
+            line-height: .18rem;
+            /*9px*/
+        }
+
+        .home-footer .home-footerSelectShow img{
+            width: .88rem;
+            height: .88rem;
+            margin-top: -0.48rem;
+        }
+        .home-footer .home-footerSelectShow span{
+            color: #100D67;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home-footer">
+        <div class="home-footerShow home-footerSelectShow" onclick="footSelect(0)">
+            <img src="../img/labelDataBig.png" />
+            <span>数据中心</span>
+        </div>
+        <div class="home-footerShow" onclick="footSelect(1)">
+            <img src="../img/labelCollectSmall.png" />
+            <span>我的收藏</span>
+        </div>
+        <div class="home-footerShow" onclick="footSelect(2)">
+            <img src="../img/labelTouchSmall.png" />
+            <span>联系我们</span>
+        </div>
+    </div>
+    <script>
+        var footerSclectPic = ["../img/labelDataBig.png", "../img/labelCollectBig.png", "../img/labelTouchBig.png"]//当前选中的图片
+        var footerPic = ["../img/labelDataSmall.png", "../img/labelCollectSmall.png", "../img/labelTouchSmall.png"]//还原的小图片
+        var selectFlag = false//定义的是否选中
+        var selectClickNum = 0//当前选中的下标
+        function footSelect(clickNum) {
+            var thisSelect = document.getElementsByClassName("home-footerShow")
+            if (selectFlag) {
+                selectFlag[selectClickNum].classList.remove("home-footerSelectShow")
+                var selectImg = selectFlag[selectClickNum].firstElementChild
+                selectImg.src = footerPic[selectClickNum]
+            }else{
+                thisSelect[0].classList.remove("home-footerSelectShow")
+                var selectImg = thisSelect[0].firstElementChild
+                selectImg.src = footerPic[0]
+            }
+            selectClickNum = clickNum
+            selectFlag = thisSelect
+            thisSelect[clickNum].classList.add("home-footerSelectShow")
+            var selectImg = thisSelect[clickNum].firstElementChild
+            selectImg.src = footerSclectPic[clickNum]
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/><!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/><!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telephone=no, email=no"/><!--忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 微软雅黑;
+            font-size: 12px;
+        }
+        .box_con{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: green;
+            height: 100vh;
+            background: url(../img/bg_login.png) no-repeat ;
+            background-size: cover;
+        }
+
+        .box {
+            width: 100%;
+            /* border: solid 1px #ddd; */
+            /* background: #041525; */
+            background: rgba(0, 0, 0, .3);
+            text-align: center;
+            /* opacity: .8; */
+        }
+
+        .box h2 {
+            color: #666;
+            font-size: 16px;
+            line-height: 40px;
+            overflow: hidden;
+            text-align: center;
+            /* border-bottom: solid 1px #ddd;
+            background: #f7f7f7; */
+            margin-bottom: 10px;
+        }
+
+        .input_box {
+            width: 100%;
+            padding-bottom: 15px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .input_box input {
+            width: 80%;
+            height: 30px;
+        }
+        .btn {
+            width: 50%;
+            height: 50px;
+            background-color: gold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box_con">
+        <div class="box">
+            <h2>登陆</h2>
+    
+            <div class="input_box">
+                <input id="uname" type="text" name="user" placeholder="请输入用户名">
+            </div>
+            <div class="input_box">
+                <input id="upass" type="password" name="psw" placeholder="请输入密码">
+            </div>
+            <div id="error_box"><br></div>
+            <div class="input_box">
+                <button type="button" class="btn btn-primary" onclick="fnLogin()">登陆</button>&nbsp&nbsp&nbsp&nbsp
+            </div>
+        </div>
+    </div>
+    <script>
+        function fnLogin() {
+            var oUname = document.getElementById("uname")
+            var oUpass = document.getElementById("upass")
+            // var oError = document.getElementById("error_box")
+            // var isError = true;
+            console.log(oUname.value,oUpass.value)
+            // if (oUname.value.length > 20 || oUname.value.length < 6) {
+            //     oError.innerHTML = "用户名请输入6-20位字符";
+            //     isError = false;
+            //     return;
+            // } else if ((oUname.value.charCodeAt(0) >= 48) && (oUname.value.charCodeAt(0) <= 57)) {
+            //     oError.innerHTML = "首字符必须为字母";
+            //     return;
+            // } else for (var i = 0; i < oUname.value.charCodeAt(i); i++) {
+            //     if ((oUname.value.charCodeAt(i) < 48) || (oUname.value.charCodeAt(i) > 57) && (oUname.value.charCodeAt(i) < 97) || (oUname.value.charCodeAt(i) > 122)) {
+            //         oError.innerHTML = "必须为字母跟数字组成";
+            //         return;
+            //     }
+            // }
+
+            // if (oUpass.value.length > 20 || oUpass.value.length < 6) {
+            //     oError.innerHTML = "密码请输入6-20位字符"
+            //     isError = false;
+            //     return;
+            // }
+            // window.alert("登录成功")
+        }
+    </script>
+</body>
+
+</html>
